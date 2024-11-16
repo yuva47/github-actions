@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Get the code"
-        run: git clone https://github.com/yuva47/github-actions.git
+        uses: actions/checkout    
+      - name: Install / Nodejs 
+        uses: actions/setup-node     
       - name: dependency install
         run: npm install
       - name: Test
