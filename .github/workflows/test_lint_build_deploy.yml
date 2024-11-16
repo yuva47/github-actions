@@ -1,0 +1,41 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Get the code
+      uses: actions/checkout@v4
+    - name: Install / Nodejs
+      uses: actions/setup-node@v4
+    - name: Install Dependency
+      run: npm install
+    - name: Lint
+      run: npm lint
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+  steps:
+    - name: Get the code
+      uses: actions/checkout@v4
+    - name: Install / Nodejs
+      uses: actions/setup-node@v4
+    - name: Install Dependency
+      run: npm install
+    - name: Test
+      run: npm test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+  steps:
+    - name: Get the code
+      uses: actions/checkout@v4
+    - name: Install / Nodejs
+      uses: actions/setup-node@v4
+    - name: Install Dependency
+      run: npm install
+    - name: Build
+      run: npm build
