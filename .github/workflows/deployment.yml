@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependency
         run: npm install
       - name: Build
-        run: npm run Build
+        run: npm run build
       - name: deploy
         run: echo "Deployment success"
 
