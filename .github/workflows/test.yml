@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Get the code"
-        uses: actions/checkout    
-      - name: Install / Nodejs 
-        uses: actions/setup-node     
-      - name: dependency install
+        uses: actions/checkout@v4    
+      - name: Install / Nodejs
+        uses: actions/setup-node@v4
+      - name: Install Dependency
         run: npm install
       - name: Test
         run: npm test
