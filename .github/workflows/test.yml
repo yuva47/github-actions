@@ -1,0 +1,15 @@
+name: Test Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get the code"
+        run: git clone https://github.com/yuva47/github-actions.git
+      - name: navigate to folder
+        run: cd github-actions
+      - name: dependency install
+        run: npm install
+      - name: Test
+        run: npm test
+
